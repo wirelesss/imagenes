@@ -13,6 +13,7 @@
 		F16552891E5BFA43000CBC69 /* imagenes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F16552871E5BFA43000CBC69 /* imagenes.xcdatamodeld */; };
 		F165528B1E5BFA43000CBC69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F165528A1E5BFA43000CBC69 /* Assets.xcassets */; };
 		F165528E1E5BFA43000CBC69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F165528C1E5BFA43000CBC69 /* LaunchScreen.storyboard */; };
+		F16552961E5C1226000CBC69 /* CVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16552951E5C1226000CBC69 /* CVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F165528A1E5BFA43000CBC69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F165528D1E5BFA43000CBC69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F165528F1E5BFA43000CBC69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F16552951E5C1226000CBC69 /* CVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				F165528C1E5BFA43000CBC69 /* LaunchScreen.storyboard */,
 				F165528F1E5BFA43000CBC69 /* Info.plist */,
 				F16552871E5BFA43000CBC69 /* imagenes.xcdatamodeld */,
+				F16552951E5C1226000CBC69 /* CVC.swift */,
 			);
 			path = imagenes;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F16552961E5C1226000CBC69 /* CVC.swift in Sources */,
 				F16552831E5BFA43000CBC69 /* ViewController.swift in Sources */,
 				F16552811E5BFA43000CBC69 /* AppDelegate.swift in Sources */,
 				F16552891E5BFA43000CBC69 /* imagenes.xcdatamodeld in Sources */,
