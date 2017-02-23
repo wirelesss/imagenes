@@ -24,6 +24,8 @@ class CVC: UICollectionViewController {
     
     var imagenes = [Seccion]()
     
+    
+    
     func busquedaGoogle(termino:String)->[UIImage]{
         var imgs = [UIImage]()
         let urls = "https://www.googleapis.com/customsearch/v1?key=AIzaSyB4aMJ05txRvvjWHiVE3l3m3gRkPaFC0Ds&cx=009549999974446203566:cg1bu8m0dgm&q=" + termino
@@ -66,16 +68,21 @@ class CVC: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
+        /* IMPORTANT: Se comenta esta linea autogenerada,
+         ya que hay conflicto si se diseña usando storyboard entonces se comentará esta siguiente línea:
+         -->
+         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        */
         // Do any additional setup after loading the view.
     }
 
     @IBAction func buscar(_ sender: UITextField) {
         let seccion = Seccion(nombre: sender.text!, imagenes: busquedaGoogle(termino: sender.text!))
         imagenes.append(seccion)
+        self.collectionView!.reloadData()
         print(busquedaGoogle(termino: sender.text!))
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -95,18 +102,21 @@ class CVC: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return imagenes.count
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        
+        // Retornar el numero de items en la seccion indicada
+        //  ( imagenes = Array [struct Seccion] ) . ( elemento de struct = imagenes = Array UIImage) . count
+        return imagenes[section].imagenes.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ImgCelda
+        cell.imagen.image = imagenes[indexPath.section].imagenes[indexPath.item]
         // Configure the cell
     
         return cell

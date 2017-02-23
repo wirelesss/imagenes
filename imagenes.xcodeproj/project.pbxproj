@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F12F9E551E5ED595009A5726 /* ImgCelda.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F9E541E5ED595009A5726 /* ImgCelda.swift */; };
 		F16552811E5BFA43000CBC69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16552801E5BFA43000CBC69 /* AppDelegate.swift */; };
 		F16552831E5BFA43000CBC69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16552821E5BFA43000CBC69 /* ViewController.swift */; };
 		F16552861E5BFA43000CBC69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F16552841E5BFA43000CBC69 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F12F9E541E5ED595009A5726 /* ImgCelda.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgCelda.swift; sourceTree = "<group>"; };
 		F165527D1E5BFA43000CBC69 /* imagenes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imagenes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F16552801E5BFA43000CBC69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F16552821E5BFA43000CBC69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				F165528F1E5BFA43000CBC69 /* Info.plist */,
 				F16552871E5BFA43000CBC69 /* imagenes.xcdatamodeld */,
 				F16552951E5C1226000CBC69 /* CVC.swift */,
+				F12F9E541E5ED595009A5726 /* ImgCelda.swift */,
 			);
 			path = imagenes;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			files = (
 				F16552961E5C1226000CBC69 /* CVC.swift in Sources */,
 				F16552831E5BFA43000CBC69 /* ViewController.swift in Sources */,
+				F12F9E551E5ED595009A5726 /* ImgCelda.swift in Sources */,
 				F16552811E5BFA43000CBC69 /* AppDelegate.swift in Sources */,
 				F16552891E5BFA43000CBC69 /* imagenes.xcdatamodeld in Sources */,
 			);
@@ -307,6 +311,7 @@
 				F16552941E5BFA43000CBC69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
