@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F108B3851F2C77E300A99992 /* EncabezadoPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F108B3841F2C77E300A99992 /* EncabezadoPrincipal.swift */; };
 		F12F9E551E5ED595009A5726 /* ImgCelda.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F9E541E5ED595009A5726 /* ImgCelda.swift */; };
 		F16552811E5BFA43000CBC69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16552801E5BFA43000CBC69 /* AppDelegate.swift */; };
 		F16552831E5BFA43000CBC69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16552821E5BFA43000CBC69 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F108B3841F2C77E300A99992 /* EncabezadoPrincipal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncabezadoPrincipal.swift; sourceTree = "<group>"; };
 		F12F9E541E5ED595009A5726 /* ImgCelda.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgCelda.swift; sourceTree = "<group>"; };
 		F165527D1E5BFA43000CBC69 /* imagenes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imagenes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F16552801E5BFA43000CBC69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				F16552871E5BFA43000CBC69 /* imagenes.xcdatamodeld */,
 				F16552951E5C1226000CBC69 /* CVC.swift */,
 				F12F9E541E5ED595009A5726 /* ImgCelda.swift */,
+				F108B3841F2C77E300A99992 /* EncabezadoPrincipal.swift */,
 			);
 			path = imagenes;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			files = (
 				F16552961E5C1226000CBC69 /* CVC.swift in Sources */,
 				F16552831E5BFA43000CBC69 /* ViewController.swift in Sources */,
+				F108B3851F2C77E300A99992 /* EncabezadoPrincipal.swift in Sources */,
 				F12F9E551E5ED595009A5726 /* ImgCelda.swift in Sources */,
 				F16552811E5BFA43000CBC69 /* AppDelegate.swift in Sources */,
 				F16552891E5BFA43000CBC69 /* imagenes.xcdatamodeld in Sources */,
@@ -273,6 +277,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = imagenes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.org.imagenes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -285,6 +290,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = imagenes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.org.imagenes;
 				PRODUCT_NAME = "$(TARGET_NAME)";

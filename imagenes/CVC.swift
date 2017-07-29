@@ -28,24 +28,28 @@ class CVC: UICollectionViewController {
     
     func busquedaGoogle(termino:String)->[UIImage]{
         var imgs = [UIImage]()
-        let urls = "https://www.googleapis.com/customsearch/v1?key=AIzaSyB4aMJ05txRvvjWHiVE3l3m3gRkPaFC0Ds&cx=009549999974446203566:cg1bu8m0dgm&q=" + termino
+        let urls = "https://www.googleapis.com/customsearch/v1?key=AIzaSyB4aMJ05txRvvjWHiVE3l3m3gRkPaFC0Ds&cx=009549999974446203566:cg1bu8m0dgm&q=" + termino.trimmingCharacters(in: .whitespacesAndNewlines)
         let url = NSURL(string:urls)
         do{
             let datos = try NSData(contentsOf: url! as URL)
             if datos != nil {
                 print(datos!)
                 let json = try JSONSerialization.jsonObject(with: datos! as Data, options: .mutableLeaves) as! NSDictionary
-                let items =  (json["items"] as! NSArray)
-                for elemento in items{
-                    if (elemento as! NSDictionary)["pagemap"] != nil {
-                        let pagemap = (elemento as! NSDictionary)["pagemap"] as! NSDictionary
-                        if pagemap["cse_thumbnail"] != nil {
-                            let cse_thumbnail = (pagemap["cse_thumbnail"] as! NSArray)[0] as! NSDictionary
-                            let src = cse_thumbnail["src"] as! String
-                            let img_url:NSURL = NSURL(string:src)!
-                            let img_datos = try NSData(contentsOf:img_url as URL,options: NSData.ReadingOptions())
-                            if let imagen = UIImage(data: img_datos as Data) {
-                                imgs.append(imagen)
+                if(json["items"] != nil){
+                    let items =  (json["items"] as! NSArray)
+                    for elemento in items{
+                        if (elemento as! NSDictionary)["pagemap"] != nil {
+                            let pagemap = (elemento as! NSDictionary)["pagemap"] as! NSDictionary
+                            if pagemap["cse_thumbnail"] != nil {
+                                let cse_thumbnail = (pagemap["cse_thumbnail"] as! NSArray)[0] as! NSDictionary
+                                let src = cse_thumbnail["src"] as! String
+                                let img_url:NSURL = NSURL(string:src)!
+                                let img_datos = try NSData(contentsOf:img_url as URL,options: NSData.ReadingOptions())
+                                if (img_datos != nil){
+                                    if let imagen = UIImage(data: img_datos as Data) {
+                                        imgs.append(imagen)
+                                    }
+                                }
                             }
                         }
                     }
@@ -53,7 +57,7 @@ class CVC: UICollectionViewController {
             }
             
         }
-        catch _ {
+        catch {
 
         }
         print("Total imagenes descargadas: \(imgs.count)")
@@ -80,6 +84,8 @@ class CVC: UICollectionViewController {
         let seccion = Seccion(nombre: sender.text!, imagenes: busquedaGoogle(termino: sender.text!))
         imagenes.append(seccion)
         self.collectionView!.reloadData()
+        sender.text = nil
+        sender.resignFirstResponder()
         print(busquedaGoogle(termino: sender.text!))
     }
     
@@ -122,6 +128,16 @@ class CVC: UICollectionViewController {
         return cell
     }
 
+   
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "idEncabezadoPrincipal", for: indexPath) as! EncabezadoPrincipal
+        cell.etiquetado.text = imagenes[indexPath.section].nombre
+        return cell
+
+    }
+    
+
+                                 
     // MARK: UICollectionViewDelegate
 
     /*
